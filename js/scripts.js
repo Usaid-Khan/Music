@@ -79,7 +79,8 @@ function formatTime(seconds) {
 
 async function main() {
     // Getting list of all the songs in the folder
-    await getSongs("songs/ncs")
+    // await getSongs("songs/ncs")
+    await getSongs("https://github.com/Usaid-Khan/Music/tree/main/songs/ncs")
     playMusic(songs[0], true)
 
     // Get the list of all the songs
