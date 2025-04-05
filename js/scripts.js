@@ -4,8 +4,7 @@ let currFolder
 
 async function getSongs(folder) {
     currFolder = folder;
-    // let a = await fetch(`http://127.0.0.1:5500/${folder}/`)
-    let a = await fetch(`https://usaid-khan.github.io/Music/${folder}/`)
+    let a = await fetch(`http://127.0.0.1:5500/${folder}/`)
     let response = await a.text()
 
     let div = document.createElement('div')
@@ -77,8 +76,7 @@ function formatTime(seconds) {
 
 async function main() {
     // Getting list of all the songs in the folder
-    // await getSongs("songs/ncs")
-    await getSongs("Music/ncs")
+    await getSongs("songs/ncs")
     playMusic(songs[0], true)
 
     // Get the list of all the songs
@@ -147,8 +145,7 @@ async function main() {
     // Load the playlist whenever card is clicked
     Array.from(document.getElementsByClassName("card")).forEach(e=> {
         e.addEventListener("click", async item=> {
-            // songs = await getSongs(`songs/${item.currentTarget.dataset.folder}`)
-            songs = await getSongs(`Music/${item.currentTarget.dataset.folder}`)
+            songs = await getSongs(`songs/${item.currentTarget.dataset.folder}`)
         })
     })
 }
