@@ -4,8 +4,9 @@ let currFolder
 
 async function getSongs(folder) {
     currFolder = folder;
-    let a = await fetch(`http://127.0.0.1:5500/${folder}/`)
+    // let a = await fetch(`http://127.0.0.1:5500/${folder}/`)
     // let a = await fetch(`https://usaid-khan.github.io/Music/${folder}/`)
+    let a = await fetch(`https://github.com/Usaid-Khan/Music/tree/main/songs/${folder}/`)
     
     let response = await a.text()
 
