@@ -134,6 +134,7 @@ async function main() {
 
     // Adding an event listener to previous
     previous.addEventListener("click", () => {
+        console.log(currentSong.src.split('/').pop())
         let currentTrack = currentSong.src.split('/').pop();
         let index = songs.findIndex(song => song.file === currentTrack);
         if(index-1 >= 0) {
@@ -143,6 +144,7 @@ async function main() {
 
     // Adding an event listener to next
     next.addEventListener("click", () => {
+        console.log(currentSong.src.split('/').pop())
         let currentTrack = currentSong.src.split('/').pop();
         let index = songs.findIndex(song => song.file === currentTrack);
         if(index+1 < songs.length) {
