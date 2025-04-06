@@ -57,23 +57,44 @@ async function getSongs(folder) {
     }
 }
 
+// Keep track of current index
+let currentIndex = 0;
+
 let playMusic = (track, pause=false) => {
     // Use the correct URL structure for GitHub Pages
     currentSong.src = `https://usaid-khan.github.io/Music/songs/${currFolder}/${track}`;
-    if(!pause) {
-        currentSong.play()
-        play.src = "svg/pause.svg"
-    }
-
+    
     // Find the song metadata from our songs array
     const songData = songs.find(s => s.file === track);
     if (songData) {
+        // Update current index when playing a song
+        currentIndex = songs.findIndex(song => song.file === track);
         document.querySelector(".songinfo").innerHTML = `${songData.title} - ${songData.artist}`;
     } else {
         document.querySelector(".songinfo").innerHTML = decodeURIComponent(track);
     }
+    
     document.querySelector(".songtime").innerHTML = "00:00 / 00:00";
+    
+    if(!pause) {
+        currentSong.play();
+        play.src = "svg/pause.svg";
+    }
 }
+
+// Adding an event listener to previous
+previous.addEventListener("click", () => {
+    if(currentIndex - 1 >= 0) {
+        playMusic(songs[currentIndex - 1].file);
+    }
+});
+
+// Adding an event listener to next
+next.addEventListener("click", () => {
+    if(currentIndex + 1 < songs.length) {
+        playMusic(songs[currentIndex + 1].file);
+    }
+});
 
 function formatTime(seconds) {
     if (!seconds || isNaN(seconds)) {
@@ -131,46 +152,6 @@ async function main() {
         document.querySelector(".left").style.left = "-100%"
         document.querySelector(".playbar").style.bottom = "15px"
     });
-
-// Adding an event listener to previous
-previous.addEventListener("click", () => {
-    const currentURL = currentSong.src;
-    console.log("Current song URL:", currentURL);
-    
-    let currentTrack = currentURL.split('/').pop();
-    console.log("Extracted track:", currentTrack);
-    
-    console.log("Songs array:", songs);
-    
-    // Try to find the song in the array
-    let index = songs.findIndex(song => song.file === currentTrack);
-    console.log("Found index:", index);
-    
-    if(index-1 >= 0) {
-        console.log("Playing previous:", songs[index-1].file);
-        playMusic(songs[index-1].file);
-    }
-});
-
-// Adding an event listener to next
-next.addEventListener("click", () => {
-    const currentURL = currentSong.src;
-    console.log("Current song URL:", currentURL);
-    
-    let currentTrack = currentURL.split('/').pop();
-    console.log("Extracted track:", currentTrack);
-    
-    console.log("Songs array:", songs);
-    
-    // Try to find the song in the array
-    let index = songs.findIndex(song => song.file === currentTrack);
-    console.log("Found index:", index);
-    
-    if(index+1 < songs.length) {
-        console.log("Playing next:", songs[index+1].file);
-        playMusic(songs[index+1].file);
-    }
-});
 
     // Adding an even listener to volume
     document.querySelector(".range").getElementsByTagName("input")[0].addEventListener("change", (e) => {
