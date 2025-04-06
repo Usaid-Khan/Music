@@ -134,16 +134,16 @@ async function main() {
 
     // Adding an event listener to previous
     previous.addEventListener("click", () => {
-        let currentTrack = currentSong.src.split('/').pop();
+        let currentTrack = currentSong.src.split('/').pop(); // Get just the filename
         let index = songs.findIndex(song => song.file === currentTrack);
         if(index-1 >= 0) {
             playMusic(songs[index-1].file);
         }
     });
-
+    
     // Adding an event listener to next
     next.addEventListener("click", () => {
-        let currentTrack = currentSong.src.split('/').pop();
+        let currentTrack = currentSong.src.split('/').pop(); // Get just the filename
         let index = songs.findIndex(song => song.file === currentTrack);
         if(index+1 < songs.length) {
             playMusic(songs[index+1].file);
