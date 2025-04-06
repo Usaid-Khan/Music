@@ -411,7 +411,7 @@ input[type="range"]::-webkit-slider-thumb:hover {
         transition: all .5s;
         z-index: 1;
 /*         width: 390px; */
-        width: 350px;                    /*change*/
+        width: 355px;                    /*change*/
         background-color: black;
     }
 
