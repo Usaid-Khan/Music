@@ -410,7 +410,7 @@ input[type="range"]::-webkit-slider-thumb:hover {
         left: -115%;
         transition: all .5s;
         z-index: 1;
-        width: 390px;
+        width: 380px;
         background-color: black;
     }
 
