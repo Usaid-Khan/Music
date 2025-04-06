@@ -128,7 +128,7 @@ async function main() {
 
     // Adding an event listener for close button
     document.querySelector(".close").addEventListener("click", () => {
-        document.querySelector(".left").style.left = "100%"
+        document.querySelector(".left").style.left = "-100%"
         document.querySelector(".playbar").style.bottom = "15px"
     });
 
