@@ -6,9 +6,13 @@
     font-family: "Roboto", sans-serif;
 }
 
+.container {
+    height: 100vh;
+}
+
 .left {
     width: 25vw;
-    padding: 10px;
+    padding: 2px;
 }
 
 .right {
@@ -18,22 +22,19 @@
 /****************************************************/
 
 .home ul li {
-    width: 14px;
+    width: 12px;
     display: flex;
-    gap: 15px;
+    gap: 9px;
     list-style: none;
-    padding-top: 10px;
+    padding-top: 8px;
     font-weight: bold;
-}
-
-.home {
-    padding: 10px;
+    font-size: 14px;
 }
 
 /****************************************************/
 
 .library {
-    min-height: 76.8vh;
+    min-height: 75.4vh;
     position: relative;
 }
 
@@ -54,10 +55,15 @@
     color: grey;
 }
 
+.footer {
+    font-size: 9px;
+    padding-left: 13px;
+}
+
 /****************************************************/
 
 .right {
-    margin: 16px 0;
+    margin: 7px 0;
     position: relative;
 }
 
@@ -65,19 +71,23 @@
     display: flex;
     justify-content: space-between;
     background-color: rgb(34, 34, 34);
-    height: 75px;
+    height: 65px;
     border-radius: 10px;
 }
 
 .header > * {
-    padding: 20px;
+    padding: 16px;
 }
 
 .nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 14px;
+    gap: 13px;
+}
+
+.nav svg {
+    width: 20px;
 }
 
 .buttons {
@@ -89,19 +99,19 @@
     outline: none;
     background-color: white;
     color: rgb(75, 75, 75);
-    font-size: 16px;
+    font-size: 13px;
     font-weight: bold;
-    padding: 12px 20px;
+    padding: 10px 12px;
     border-radius: 20px;
     cursor: pointer;
     position: absolute;
-    right: 30px;
+    right: 25px;
     top: 15px;
-    width: 90px;
+    width: 80px;
 }
 
 .loginbtn:hover {
-    font-size: 17px;
+    font-size: 15px;
     background-color: rgb(249, 247, 247);
     color: black;
 }
@@ -116,16 +126,16 @@
     background-color: rgb(34, 34, 34);
     color: grey;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 13px;
     cursor: pointer;
     position: absolute;
-    right: 160px;
-    top: 26px;
+    right: 140px;
+    top: 24px;
     width: 70px;
 }
 
 .signupbtn:hover {
-    font-size: 17px;
+    font-size: 15px;
     color: white;
 }
 
@@ -145,12 +155,17 @@
 }
 
 .card {
-    width: 200px;
+    width: 130px;
     padding: 10px;
     border-radius: 5px;
     background-color: #252525;
     position: relative;
     transition: all 0.5s;
+}
+
+.card p {
+    font-size: 11px;
+    padding-bottom: 7px;
 }
 
 .card img {
@@ -160,13 +175,14 @@
 }
 
 .card > * {
-    padding-top: 10px;
+    padding-top: 5px;
+    padding-bottom: 4px;
 }
 
 .play svg {
     position: absolute;
-    top: 174px;
-    right: 17px;
+    top: 120px;
+    right: 13px;
     opacity: 0;
 }
 
@@ -189,12 +205,12 @@
 
 .playbar {
     position: fixed;
-    bottom: 30px;
+    bottom: 18px;
     background: linear-gradient(45deg, white, #20D762, skyblue, rgb(239, 239, 125));
     background-size: 300% 300%;
     animation: rainbowBackground 12s infinite linear;
     width: 68vw;
-    padding: 13px;
+    padding: 10px;
     border-radius: 8px;
     min-height: 40px;
 }
@@ -204,7 +220,7 @@
     width: 96%;
     background: black;
     position: absolute;
-    bottom: 0;
+    bottom: -2px;
     border-radius: 10px;
     margin: 6px;
     margin-bottom: 10px;
@@ -212,12 +228,12 @@
 }
 
 .circle {
-    width: 13px;
-    height: 13px;
+    width: 11px;
+    height: 11px;
     border-radius: 14px;
     background-color: black;
     position: relative;
-    bottom:6px;
+    bottom:4.5px;
     left: -1px;
     transition: left 0.5s;
     cursor: pointer;
@@ -231,14 +247,14 @@
 
 .song-list ul li {
     list-style-type: decimal;
-    font-size: 13px;
+    font-size: 12px;
     display: flex;
-    gap: 12px;
+    gap: 10px;
     cursor: pointer;
-    padding: 10px 0;
+    padding: 0px 0;
     border: 1px solid white;
-    margin: 12px 0;
-    padding: 13px;
+    margin: 10px 0;
+    padding: 8px;
     border-radius: 6px;
     justify-content: space-between;
 }
@@ -259,11 +275,12 @@
 }
 
 .song-list ul li img {
-    width: 20px;
+    width: 16px;
 }
 
 .song-list {
-    height: 473px;
+    /* height: 400px; */
+    height: 70vh;
     overflow: auto;
 }
 
@@ -290,26 +307,27 @@
 .songbuttons {
     display: flex;
     justify-content: center;
-    gap: 15px;
-    padding-bottom: 8px;
+    gap: 13px;
+    margin-top: 5px;
 }
 
 .songbuttons img {
     cursor: pointer;
-    width: 25px;
+    width: 20px;
 }
 
 .songinfo {
     padding-left: 6px;
     padding-top: 6px;
-    width: 300px;
+    width: 290px;
     color: black;
+    font-size: 14px;
 }
 
 .songtime {
-    padding-right: 11px;
+    padding-right: 3px;
     color: black;
-    width: 120px;
+    width: 95px;
 }
 
 .timevol {
@@ -317,6 +335,8 @@
     justify-content: space-evenly;
     align-items: center;
     margin-right: 15px;
+    margin-top: 5px;
+    font-size: 14px;
 }
 
 .volume {
@@ -325,6 +345,10 @@
     align-items: center;
     gap: 5px;
     cursor: pointer;
+}
+
+.volume img {
+    padding-top: 1px;
 }
 
 /* Remove default styles */
@@ -342,7 +366,7 @@ input[type="range"] {
 /* Track Styling */
 input[type="range"]::-webkit-slider-runnable-track {
     width: 100%;
-    height: 6px;
+    height: 5px;
     background: linear-gradient(to right, #4CAF50, #8BC34A);
     border-radius: 5px;
     margin-bottom: 10px;
@@ -403,8 +427,16 @@ input[type="range"]::-webkit-slider-thumb:hover {
     }
 
     .card {
-        width: 40vw;
-        margin: 10px;
+        /* width: 40vw;
+        margin: 10px; */
+        width: 160px;  /* Fixed width instead of percentage */
+        max-width: 160px;
+        margin: 12px;
+    }
+
+    .card p {
+        font-size: 8px;
+        padding-bottom: 5.5px;
     }
 
     .playbar {
@@ -458,8 +490,9 @@ input[type="range"]::-webkit-slider-thumb:hover {
         font-size: 11px;
     }
 
-    .card h2 {
-        font-size: 13px;
+    .card p {
+        font-size: 8px;
+        padding-bottom: 5.5px;
     }
 
     .right {
@@ -506,13 +539,18 @@ input[type="range"]::-webkit-slider-thumb:hover {
 
     @media (max-width : 400px) {
         .card {
-            width: 30vw;
+            width: 34vw;
             margin: 8px;
             font-size: 10px;
         }
-    
-        .card h2 {
-            font-size: 12px;
+
+        .card p {
+            font-size: 11px;
+            padding-bottom: 5.5px;
+        }
+
+        .card h5 {
+            font-size: 14px;
         }
     }
 }
